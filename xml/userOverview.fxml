@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<!-- fx:controller is the class that handles any logic for this xml -->
+
+<GridPane fx:id="mainPane" minHeight="500.0" minWidth="500.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../css/overview.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserOverviewController">
+
+    <children>
+        <!-- Fixed UI -->
+        <HBox id="header" fx:id="hbxFixedUI" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="400.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <children>
+            <Button id="imageButton" fx:id="btnBack" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#loadCarerUI" text="&lt;-" visible="false" />
+                <Label id="headerLabel" fx:id="lblOverviewTitle" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="150.0" prefHeight="50.0" prefWidth="5000.0" text="My Overview" HBox.hgrow="ALWAYS">
+                    <padding>
+                      <Insets left="50.0" />
+                    </padding>
+                    <font>
+                      <Font name="SansSerif Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Button id="imageButton" fx:id="btnLogout" minHeight="40.0" minWidth="40.0" onAction="#logout" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER">
+                <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </HBox.margin></Button>
+            <Button id="imageButton" fx:id="btnSettings" minHeight="50.0" minWidth="50.0" onAction="#loadSettings" prefHeight="50.0" prefWidth="50.0" text="" textAlignment="CENTER" />
+            </children>
+        </HBox>
+
+        <!-- Chat Container -->
+        <HBox alignment="BOTTOM_CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <children>
+                <Label maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="5000.0" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Label>
+                <Button id="btnContact" fx:id="btnContact" minHeight="50.0" minWidth="200.0" onAction="#contactCarer" prefHeight="50.0" prefWidth="200.0" text="Contact Carer">
+               <HBox.margin>
+                  <Insets right="100.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font></Button>
+            </children>
+        </HBox>
+      <GridPane fx:id="grdGraph" GridPane.rowIndex="2">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="ALWAYS" maxWidth="1024.0" minWidth="10.0" prefWidth="500.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <LineChart fx:id="graMain" alternativeColumnFillVisible="true" titleSide="BOTTOM" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <Label id="graphTitle" fx:id="lblGraphTitle" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Heart-Rate Graph" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <font>
+                  <Font name="SansSerif Regular" size="13.0" />
+               </font></Label>
+            <Label id="axisLabel" fx:id="lblYAxis" alignment="CENTER" maxHeight="30.0" maxWidth="125.0" minHeight="30.0" minWidth="125.0" prefHeight="30.0" prefWidth="125.0" rotate="-90.0" text="Number of Steps" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Label id="borderLabel" fx:id="lblNoData" alignment="CENTER" maxHeight="50000.0" maxWidth="50000.0" text="[ No Data for this Period ]" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="300.0" prefWidth="300.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button id="btnPrevDay" fx:id="btnPrevDay" minWidth="80.0" mnemonicParsing="false" onAction="#setDateNextPrev" prefHeight="30.0" text="Prev" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00a780" height="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+                        <Button id="btnNextDay" fx:id="btnNextDay" minWidth="80.0" mnemonicParsing="false" onAction="#setDateNextPrev" prefHeight="30.0" text="Next" />
+                        <Rectangle fill="#00a780" height="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="2.0" />
+                        <Button id="btnCustomDay" fx:id="btnCustomDay" minWidth="80.0" mnemonicParsing="false" onAction="#loadCustom" prefHeight="30.0" text="Custom" />
+                        <DatePicker fx:id="dpCustom" minWidth="120.0" visible="false">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </DatePicker>
+                        <Button fx:id="btnConfirm" minWidth="50.0" mnemonicParsing="false" onAction="#updateDate" text="OK" visible="false">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label id="axisLabel" fx:id="lblXAxis" alignment="CENTER" maxHeight="30.0" maxWidth="125.0" minHeight="30.0" minWidth="125.0" prefHeight="30.0" prefWidth="125.0" text="Time" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></Label>
+               </children>
+            </GridPane>
+            <Label id="currentDate" fx:id="lblCurrentDate" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Current Date" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font name="SansSerif Regular" size="13.0" />
+               </font></Label>
+            <GridPane fx:id="grdUserInfo" GridPane.columnIndex="2" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button id="btnSetGoals" fx:id="btnSetGoals" mnemonicParsing="false" onAction="#loadGoalUI" text="Set Goals" GridPane.halignment="CENTER" />
+                  <Label fx:id="lblBMIHeader" text="BMI Value :" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblBMIValue" text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label fx:id="lblBMRHeader" text="BMR Value :" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblBMRValue" text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <FlowPane fx:id="flwVitals" alignment="CENTER" columnHalignment="CENTER" hgap="50.0" prefWrapLength="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <children>
+            <GridPane fx:id="grdSleep">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button id="btnDropDownSleep" fx:id="btnDropDownSleep" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#loadGraph" prefHeight="30.0" prefWidth="30.0" rotate="-90.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <Ellipse fill="#badeff" radiusX="80.0" radiusY="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Ellipse>
+                  <Label id="vitalValue" fx:id="lblVitalSleep" alignment="CENTER" minHeight="30.0" minWidth="125.0" prefHeight="30.0" prefWidth="125.0" text="Sleep Value" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="SansSerif Regular" size="13.0" />
+                     </font></Label>
+               </children>
+            </GridPane>
+            <GridPane fx:id="grdHeart">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button id="btnDropDownHeart" fx:id="btnDropDownHeart" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#loadGraph" prefHeight="30.0" prefWidth="30.0" rotate="-90.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <Ellipse fill="#ffbdba" radiusX="80.0" radiusY="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Ellipse>
+                  <Label id="vitalValue" fx:id="lblVitalHeart" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="125.0" prefHeight="30.0" prefWidth="125.0" text="BPM Value" GridPane.halignment="CENTER" />
+               </children>
+            </GridPane>
+            <GridPane fx:id="grdSteps">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button id="btnDropDownSteps" fx:id="btnDropDownSteps" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#loadGraph" prefHeight="30.0" prefWidth="30.0" rotate="90.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <Ellipse fill="#ffffba" radiusX="80.0" radiusY="80.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Ellipse>
+                  <Label id="vitalValue" fx:id="lblVitalStep" alignment="CENTER" minHeight="30.0" minWidth="125.0" prefHeight="30.0" prefWidth="125.0" text="Steps Value" GridPane.halignment="CENTER" />
+               </children>
+            </GridPane>
+         </children>
+      </FlowPane>
+
+    </children>
+    <columnConstraints>
+      <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+      <RowConstraints />
+      <RowConstraints maxHeight="240.0" minHeight="240.0" prefHeight="240.0" />
+      <RowConstraints vgrow="ALWAYS" />
+      <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" />
+    </rowConstraints>
+
+</GridPane>

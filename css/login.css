@@ -1,0 +1,75 @@
+/*  CSS Sheet for Login Page */
+/* .root affects all nodes */
+.root {
+    -fx-font-size: 14px;
+    -fx-font-family: sans-serif;
+    -fx-background-color: #f0f0f0;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-background-color: #00d2a3;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 30px;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #383838, 20, 0, 0, 0);
+}
+
+.button:pressed:hover {
+    -fx-scale-y: 0.95;
+    -fx-scale-x: 0.95;
+}
+
+.button:hover {
+    -fx-background-color: #14e6b7;
+    -fx-scale-y: 1.05;
+}
+
+#lblLogin {
+    -fx-padding: 5;
+    -fx-text-fill: #989898;
+    -fx-background-color: white;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 200px;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-alignment: justify;
+}
+
+#lblVersion {
+    -fx-pref-height: 30px;
+    -fx-pref-width: 60px;
+    -fx-background-color: null;
+    -fx-font-size: 10px;
+}
+
+#btnRegister {
+    -fx-text-fill: #40c4ff;
+    -fx-background-color: null;
+    -fx-pref-width: 1200px;
+    -fx-pref-height: 30px;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #ffffff, 0, 0, 0, 0);
+}
+
+.login-section {
+    -fx-padding: 10;
+    -fx-vgap: 10;
+}
+
+.text-field {
+    -fx-pref-height: 30px;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.password-field {
+    -fx-pref-height: 30px;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}

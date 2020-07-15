@@ -1,0 +1,41 @@
+/* Affects Look of Preview */
+#header {
+    -fx-background-color : #00d2a3;
+    -fx-effect: dropshadow(gaussian, #383838, 10, 0, 0, 0);
+}
+
+#headerLabel {
+    -fx-text-fill: #ffffff;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-background-color: #00d2a3;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 30px;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #383838, 10, 0, 0, 0);
+}
+
+#imageButton {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(gaussian, #383838, 0, 0, 0, 0);
+}
+
+#buttonAlt {
+    -fx-background-color: #fc4d4d;
+}
+
+.button:pressed:hover {
+    -fx-scale-y: 0.95;
+    -fx-scale-x: 0.95;
+}
+
+.button:hover {
+    -fx-scale-y: 1.05;
+}

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="768.0" minWidth="1024.0" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../css/userGoals.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateGoalController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="501.7333301544189" minHeight="10.0" prefHeight="501.7333301544189" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox id="header" fx:id="hboxBanner" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button id="imageButton" fx:id="btnBack" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="50.0" />
+            <Label id="headerLabel" fx:id="lblHeader" alignment="CENTER" maxWidth="6000.0" minHeight="50.0" prefHeight="50.0" text="Create Goal" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font></Label>
+            <Button id="imageButton" fx:id="btnLogout" mnemonicParsing="false" onAction="#logout" prefHeight="50.0" prefWidth="50.0" />
+            <Button id="imageButton" fx:id="btnSettings" mnemonicParsing="false" onAction="#loadSettings" prefHeight="50.0" prefWidth="50.0" />
+         </children>
+      </HBox>
+      <GridPane maxWidth="1024.0" minHeight="200.0" prefWidth="1024.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="503.4667053222656" minWidth="10.0" prefWidth="196.99995727539059" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="850.13330078125" minWidth="10.0" prefWidth="171.40004272460942" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox fx:id="vboxGoal" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Label minHeight="20.0" prefHeight="20.0" text="Type of Goal">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></Label>
+                  <ChoiceBox fx:id="cbxTypeGoal" prefHeight="30.0" prefWidth="150.0" value="step">
+                    <items>
+                      <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="step" />
+                          <String fx:value="calorie" />
+                      </FXCollections>
+                    </items>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <Label fx:id="lblGoalValue" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Goal Value">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="13.0" />
+                     </font></Label>
+                  <TextField fx:id="txtGoalInt" PromptText="Number like 1000" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></TextField>
+                  <Button fx:id="btncreategoal" alignment="CENTER" mnemonicParsing="false" onAction="#createGoal" text="Create Goal">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></Button>
+               </children>
+            </VBox>
+            <VBox fx:id="vboxPreset" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+               <children>
+                  <Label fx:id="lblPreset" minHeight="20.0" prefHeight="20.0" text="Preset Goals">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></Label>
+                  <ChoiceBox fx:id="cbxPresetGoal" prefHeight="30.0" prefWidth="150.0">
+                    <items>
+                      <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="1000 step" />
+                        <String fx:value="2000 step" />
+                        <String fx:value="3000 step" />
+                        <String fx:value="3500 step" />
+                        <String fx:value="4000 step" />
+                        <String fx:value="4500 step" />
+                      </FXCollections>
+                    </items>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <Button fx:id="btnCreatePreset" mnemonicParsing="false" onAction="#createPreset" text="Create Preset Goal">
+                     <VBox.margin>
+                        <Insets top="95.0" />
+                     </VBox.margin></Button>
+               </children>
+            </VBox>
+            <VBox fx:id="vboxSleep" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="lblSleepTimes" text="Set a bedtime">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="14.0" />
+                     </font></Label>
+                  <Label fx:id="lblBTime" text="Bedtime">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtBedTime" PromptText="Put Bedtime Here" minHeight="30.0" prefHeight="30.0">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></TextField>
+                  <Label fx:id="lblWTime" text="Wakeup">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtWakeUp" PromptText="Put Wakeup Time Here" minHeight="30.0" prefHeight="30.0">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin></TextField>
+                  <Button fx:id="btnSBT" mnemonicParsing="false" onAction="#cbedtime" text="Create Sleep Time">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="btnDeleteBT" mnemonicParsing="false" onAction="#dbedtime" text="Delete Sleep Time">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></Button>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</GridPane>

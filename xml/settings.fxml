@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<!-- fx:controller is the class that handles any logic for this xml -->
+
+<GridPane fx:id="mainPane" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SettingsController">
+
+    <children>
+        <!-- Fixed UI -->
+        <HBox id="header" fx:id="hbxFixedUI" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="400.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <children>
+                <Button id="imageButton" fx:id="btnBack" minHeight="50.0" minWidth="50.0" onAction="#loadMainUI" prefHeight="50.0" prefWidth="50.0" text="&lt;-" textAlignment="CENTER" />
+                <Label id="headerLabel" fx:id="lblOverviewTitle" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="150.0" prefHeight="50.0" prefWidth="5000.0" text="Settings" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                  <Insets />
+                </HBox.margin>
+                <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+                </font>
+                </Label>
+            <Button id="imageButton" fx:id="btnLogout" minHeight="50.0" minWidth="50.0" onAction="#logout" prefHeight="50.0" prefWidth="50.0" text="Logout" textAlignment="CENTER" />
+            </children>
+        </HBox>
+      <GridPane GridPane.rowIndex="2">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button id="buttonAlt" fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteAccount" text="Delete Account" GridPane.rowIndex="7">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+            <Label text="Account Overview" GridPane.columnSpan="3" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label text="First Name" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Last Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Password" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnChangePassword" mnemonicParsing="false" onAction="#loadPasCheck" text="Change Password" GridPane.columnSpan="2" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+            <Label text="E-Mail Address" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEmail" text="EM" GridPane.columnSpan="2" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="lblFirstName" text="Label" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="lblLastName" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Button fx:id="btnConfirmPassword" mnemonicParsing="false" onAction="#confirmPassword" text="Confirm Password" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+            <PasswordField fx:id="psfCheckPassword" visible="false" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="20.0" right="20.0" />
+               </GridPane.margin>
+            </PasswordField>
+            <Button fx:id="btnAccPasswordChange" mnemonicParsing="false" onAction="#changePassword" text="Change Password" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+
+    </children>
+
+    <!-- Style Sheet Appended to XML -->
+    <stylesheets>
+        <URL value="@/css/overview.css" />
+    </stylesheets>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints vgrow="ALWAYS" />
+      <RowConstraints />
+   </rowConstraints>
+
+</GridPane>

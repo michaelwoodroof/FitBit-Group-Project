@@ -1,0 +1,7 @@
+*.class
+DebugLoader.java
+loggedin.txt
+CarerDetailController.java
+ReportDataController.java
+reportData.fxml
+carerDetail.fxml

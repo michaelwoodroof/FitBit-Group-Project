@@ -1,0 +1,160 @@
+/*  CSS Sheet for Login Page */
+/* .root affects all nodes */
+
+/* Affects Look of Preview */
+.root {
+    -fx-font-family: SansSerif Regular;
+}
+
+.button {
+    -fx-cursor: hand;
+}
+
+.button:pressed:hover {
+    -fx-scale-y: 0.95;
+    -fx-scale-x: 0.95;
+}
+
+#currentDate {
+    -fx-font-size: 13px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color : #00d2a3;
+    -fx-border-radius: 10 10 0 0;
+    -fx-background-radius: 10 10 0 0;
+}
+
+#graphTitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color : #00d2a3;
+    -fx-border-radius: 10 10 0 0;
+    -fx-background-radius: 10 10 0 0;
+}
+
+#btnPrevDay {
+    -fx-font-size: 13px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color : #00d2a3;
+    -fx-border-radius: 0 0 0 10;
+    -fx-background-radius: 0 0 0 10;
+}
+
+#btnNextDay {
+    -fx-border-width: 0px 1px 0px 1px;
+    -fx-border-color: #00aa84 #00aa84 #00aa84 #00aa84;
+    -fx-font-size: 13px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color : #00d2a3;
+}
+
+#btnCustomDay {
+    -fx-font-size: 13px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color : #00d2a3;
+    -fx-border-radius: 0 0 10 0;
+    -fx-background-radius: 0 0 10 0;
+}
+
+#borderLabel {
+    -fx-border-width: 3px;
+    -fx-border-color: #cecece;
+}
+
+#header {
+    -fx-background-color : #00d2a3;
+    -fx-effect: dropshadow(gaussian, #383838, 10, 0, 0, 0);
+}
+
+#imageButton {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+}
+
+#headerLabel {
+    -fx-text-fill: #ffffff;
+}
+
+#vitalContainer {
+    -fx-min-height : 200px;
+    -fx-pref-height : 200px;
+    -fx-min-width : 200px;
+    -fx-pref-width : 200px;
+}
+
+#vitalGraph {
+    -fx-min-height : 240px;
+    -fx-pref-height : 240px;
+    -fx-min-width : 240px;
+    -fx-pref-width : 240px;
+}
+
+#vitalValue {
+    -fx-min-height : 40px;
+    -fx-pref-height : 40px;
+    -fx-min-width : 200px;
+    -fx-pref-width : 200px;
+    -fx-text-fill: #989898;
+    -fx-background-color: white;
+    -fx-border-radius: 30px;
+    -fx-alignment : center;
+    -fx-background-radius: 30px;
+    -fx-text-alignment: center;
+}
+
+#btnSetGoals {
+    -fx-text-fill: #8e7c3f;
+    -fx-background-color: #fada5e;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-min-height : 30px;
+    -fx-pref-height : 30px;
+    -fx-min-width : 100px;
+    -fx-pref-width : 100px;
+}
+
+#axisLabel {
+    -fx-padding: 5;
+    -fx-text-fill: gainsboro;
+    -fx-background-color: white;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-min-height : 30px;
+    -fx-pref-height : 30px;
+    -fx-min-width : 125px;
+    -fx-pref-width : 125px;
+}
+
+#btnDropDownHeart {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 30;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, #383838, 10, 0, 0, 0);
+}
+
+#btnDropDownSleep {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 30;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, #383838, 10, 0, 0, 0);
+}
+
+#btnDropDownSteps {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-radius: 30;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, #383838, 10, 0, 0, 0);
+}
+
+#btnContact {
+    -fx-font-family: SansSerif Bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color : #00d2a3;
+    -fx-border-radius: 10 10 0 0;
+    -fx-background-radius: 10 10 0 0;
+}

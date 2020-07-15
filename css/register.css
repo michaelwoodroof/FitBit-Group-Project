@@ -1,0 +1,34 @@
+.root {
+    -fx-padding: 10;
+    -fx-vgap: 10;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-background-color: #00d2a3;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 30px;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #383838, 20, 0, 0, 0);
+}
+
+.button:pressed:hover {
+    -fx-scale-y: 0.95;
+    -fx-scale-x: 0.95;
+}
+
+.button:hover {
+    -fx-background-color: #14e6b7;
+    -fx-scale-y: 1.05;
+}
+
+.errorTextField {
+    -fx-text-box-border: red ;
+    -fx-focus-color: red ;
+}
+
+.errorLabel {
+    -fx-text-fill: red;
+}

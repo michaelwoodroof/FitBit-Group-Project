@@ -1,0 +1,76 @@
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import java.net.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.collections.*?>
+<?import java.lang.String?>
+
+<!-- fx:controller is the class that handles any logic for this xml -->
+<GridPane fx:id = "mainPane" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RegisterController">
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Label fx:id = "lblTypeAcc" text = "Type of Account" />
+        <ChoiceBox fx:id = "cbxTypeAcc" value = " User">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value=" User" />
+                    <String fx:value=" CareGiver" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+    </VBox>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Label fx:id = "lblFirstName"  text = "Enter First Name" />
+        <TextField fx:id = "txtfFirstName" />
+    </VBox>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="2">
+        <Label fx:id = "lblLastName"  text = "Enter Last Name" />
+        <TextField fx:id = "txtfLastName" />
+    </VBox>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="3">
+        <Label fx:id = "lblEmail"  text = "Enter Email Address" />
+        <TextField fx:id = "txtfEmail" />
+    </VBox>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="4">
+        <Label fx:id = "lblPasswordFirst"  text = "Enter Password" />
+        <TextField fx:id = "txtfPasswordFirst" />
+    </VBox>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="5">
+        <Label fx:id = "lblPasswordConfirm"  text = "Confirm Password" />
+        <TextField fx:id = "txtfConfirmPassword" />
+    </VBox>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="6">
+        <Label fx:id = "lblGender"  text = "Enter Gender" />
+        <ChoiceBox fx:id = "cbxGender" value = "Prefer not to Say">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Male" />
+                    <String fx:value="Female" />
+                    <String fx:value="Female" />
+                    <String fx:value="Prefer not to say" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+    </VBox>
+
+    <Button fx:id = "btnRegister" text = "Register" onAction = "#register" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <!-- Style Sheet Appended to XML -->
+    <stylesheets>
+        <URL value="@/css/register.css" />
+    </stylesheets>
+</GridPane>
